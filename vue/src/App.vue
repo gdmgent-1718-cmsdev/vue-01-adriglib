@@ -4,21 +4,17 @@
 <!--De pagina bestaat uit twee componenten. SourceSelection heeft een custom event, elke keer je een nieuwsbron
 selecteert. De event handler wordt toegevoegd aan het methodsobject. Die ontvangt de nieuwe selectie.-->
     <SourceSelection v-on:sourceChanged="sourceChanged"></SourceSelection>
-<!--Deze ontvangt 'source', dat gebonden is aan de selector dankzij de methode-->
-    <Newslist v-bind:source="source"></Newslist>
 
   </div>
 </template>
 
 <script>
-// We importeren de twee componenten zodat we hun tags kunnen gebruiken in de maintemplate.
-  import Newslist from './components/Newslist'
+// We importeren de component zodat we hun tags kunnen gebruiken in de maintemplate.
   import SourceSelection from './components/SourceSelection'
 
   export default {
     name: 'app',
     components: {
-      Newslist,
       SourceSelection
     },
     data () {
